@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core'
 import { HousingLocationComponent } from '../housing-location/housing-location.component'
+
 import { CommonModule } from '@angular/common'
 import { HousingService } from '../housing.service'
 import { HousingLocation } from '../housinglocation'
@@ -40,7 +41,6 @@ import { HousingLocation } from '../housinglocation'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  
   housingLocationList: HousingLocation[] = []
   housingService: HousingService = inject(HousingService)
   filteredLocationList: HousingLocation[] = []
@@ -54,6 +54,7 @@ export class HomeComponent {
 
   filterResults(text: string | Event) {
     let newText = ''
+
     if (typeof text === 'string') {
       newText = text
     } else {
